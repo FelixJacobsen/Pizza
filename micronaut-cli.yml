@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: se.iths
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [annotation-api, app-name, github-workflow-docker-registry, github-workflow-graal-docker-registry, graalvm, http-client, jackson-databind, java, java-application, junit, logback, maven, mongo-sync, netty-server, readme, shade, testcontainers, yaml]
