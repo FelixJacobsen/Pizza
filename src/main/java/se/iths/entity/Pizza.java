@@ -16,11 +16,11 @@ public class Pizza {
     @NotEmpty
     @NotNull
     @BsonProperty("name")
-    private String name;
+    private final String name;
 
     @Nullable
     @BsonProperty("ingrediens")
-    private String ingrediens;
+    private final String ingrediens;
 
     public Pizza(@NonNull String name) {
         this(name,null);
