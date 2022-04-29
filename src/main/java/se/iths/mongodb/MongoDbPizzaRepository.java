@@ -1,7 +1,7 @@
 package se.iths.mongodb;
 
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoCollection;
+import com.mongodb.reactivestreams.client.MongoClient;
+import com.mongodb.reactivestreams.client.MongoCollection;
 import io.micronaut.core.annotation.NonNull;
 import jakarta.inject.Singleton;
 import org.reactivestreams.Publisher;
