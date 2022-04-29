@@ -15,6 +15,8 @@ import se.iths.repository.PizzaRepository;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
+import static io.micronaut.http.HttpStatus.CONFLICT;
+import static io.micronaut.http.HttpStatus.CREATED;
 
 @Controller("/pizzas")
 @ExecuteOn(TaskExecutors.IO)
@@ -32,7 +34,7 @@ public class PizzaController {
 
     @Post
     public Mono<HttpStatus> save(@NonNull @NotNull @Valid Pizza pizza) {
-        return service.save(pizza).map(added -> added ? HttpStatus.CREATED : HttpStatus.CONFLICT);
+        return service.save(pizza).map(added -> added ? CREATED : CONFLICT);
     }
 
 }
