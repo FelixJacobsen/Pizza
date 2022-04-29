@@ -7,7 +7,6 @@ import se.iths.entity.Pizza;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 public interface PizzaRepository {
 

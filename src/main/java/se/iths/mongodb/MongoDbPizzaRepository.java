@@ -1,11 +1,16 @@
 package se.iths.mongodb;
 
 import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoCollection;
+import io.micronaut.core.annotation.NonNull;
 import jakarta.inject.Singleton;
 import org.reactivestreams.Publisher;
 import reactor.core.publisher.Mono;
 import se.iths.entity.Pizza;
 import se.iths.repository.PizzaRepository;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Singleton
 public class MongoDbPizzaRepository implements PizzaRepository {
@@ -20,12 +25,21 @@ public class MongoDbPizzaRepository implements PizzaRepository {
 
 
     @Override
-    public Publisher<Pizza> getAll() {
-        return null;
+    public Mono<Boolean> save(@NonNull @NotNull @Valid Pizza pizza) {
+        return Mono.from(getCollection().insertOne(pizza))
+                .map(insertOneResult -> true)
+                .onErrorReturn(false);
     }
 
     @Override
-    public Mono<Boolean> save(Pizza pizza) {
-        return null;
+    @NonNull
+    public Publisher<Pizza> getAll() {
+        return getCollection().find();
+    }
+
+    @NonNull
+    private MongoCollection<Pizza> getCollection() {
+        return client.getDatabase(configuration.getName())
+                .getCollection(configuration.getCollection(), Pizza.class);
     }
 }
