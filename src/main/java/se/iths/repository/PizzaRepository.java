@@ -1,6 +1,8 @@
 package se.iths.repository;
 
 import io.micronaut.core.annotation.NonNull;
+import org.reactivestreams.Publisher;
+import reactor.core.publisher.Mono;
 import se.iths.entity.Pizza;
 
 import javax.validation.Valid;
@@ -10,7 +12,7 @@ import java.util.List;
 public interface PizzaRepository {
 
     @NonNull
-    List<Pizza> getAll();
+    Publisher<Pizza> getAll();
 
-    void save(@NonNull @NotNull @Valid Pizza pizza);
+    Mono<Boolean> save(@NonNull @NotNull @Valid Pizza pizza);
 }
