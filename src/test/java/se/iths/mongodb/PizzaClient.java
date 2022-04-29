@@ -1,4 +1,4 @@
-package se.iths.client;
+package se.iths.mongodb;
 
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.http.HttpStatus;
