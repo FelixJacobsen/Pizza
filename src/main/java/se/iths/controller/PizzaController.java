@@ -19,7 +19,6 @@ import static io.micronaut.http.HttpStatus.CONFLICT;
 import static io.micronaut.http.HttpStatus.CREATED;
 
 @Controller("/pizzas")
-@ExecuteOn(TaskExecutors.IO)
 public class PizzaController {
     private final PizzaRepository service;
 

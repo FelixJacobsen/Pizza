@@ -11,7 +11,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
-@Client
+@Client("/pizzas")
 public interface PizzaClient {
 
     @Post

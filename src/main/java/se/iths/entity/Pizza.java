@@ -1,9 +1,6 @@
 package se.iths.entity;
 
-import io.micronaut.core.annotation.Creator;
-import io.micronaut.core.annotation.Introspected;
-import io.micronaut.core.annotation.NonNull;
-import io.micronaut.core.annotation.Nullable;
+import io.micronaut.core.annotation.*;
 import org.bson.codecs.pojo.annotations.BsonCreator;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 
@@ -11,6 +8,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Introspected
+@ReflectiveAccess
 public class Pizza {
 
     @NotEmpty

@@ -1,0 +1,11 @@
+POST http://localhost:8080/pizzas
+Content-Type: application/json
+
+{
+"name": "Hawaii"
+}
+
+###
+GET http://localhost:8080/pizzas
+###
+
