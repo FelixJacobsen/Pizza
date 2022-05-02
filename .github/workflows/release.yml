@@ -54,7 +54,7 @@ jobs:
 
       - name: Rename and Push Docker image
         run: | 
-          docker tag mongomicronaut:latest ${{ env.IMAGE_NAME }}:latest
+          docker tag pizza:0.1 ${{ env.IMAGE_NAME }}:latest
           docker push ${{ env.IMAGE_NAME }}:latest
-          docker tag mongomicronaut:latest ${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+          docker tag pizza:0.1 ${{ env.IMAGE_NAME }}:${{ env.VERSION }}
           docker push ${{ env.IMAGE_NAME }}:${{ env.VERSION }}
