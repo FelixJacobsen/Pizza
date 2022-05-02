@@ -6,7 +6,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ghcr.io/${{ secrets.REPOSITORY_NAME }}/Pizza
+  IMAGE_NAME: ghcr.io/pizza
   VERSION: ${{ github.event.release.tag_name }}
 
 jobs:
