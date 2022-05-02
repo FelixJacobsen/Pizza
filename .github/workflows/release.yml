@@ -58,6 +58,6 @@ jobs:
       - name: Push image
         run: | 
           docker tag pizza:latest ${{ env.IMAGE_NAME }}:latest
-          docker push pizza:latest
+          docker push ${{ env.IMAGE_NAME }}:latest
           docker tag pizza:latest ${{ env.IMAGE_NAME }}:{{ env.VERSION }}
-          docker push pizza{{ env.VERSION }}
+          docker push ${{ env.IMAGE_NAME }}:${{ env.VERSION }}
