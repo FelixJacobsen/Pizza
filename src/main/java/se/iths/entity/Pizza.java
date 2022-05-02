@@ -4,6 +4,7 @@ import io.micronaut.core.annotation.*;
 import org.bson.codecs.pojo.annotations.BsonCreator;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -11,8 +12,8 @@ import javax.validation.constraints.NotNull;
 @ReflectiveAccess
 public class Pizza {
 
-    @NotEmpty
-    @NotNull
+    @NonNull
+    @NotBlank
     @BsonProperty("name")
     private final String name;
 
