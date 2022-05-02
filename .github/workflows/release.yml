@@ -6,7 +6,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ghcr.io/${{ secrets.REPOSITORY_NAME }}/pizza
+  IMAGE_NAME: ghcr.io/${{ secrets.REPOSITORY_NAME }}/Pizza
   VERSION: ${{ github.event.release.tag_name }}
 
 jobs:
@@ -57,7 +57,7 @@ jobs:
 
       - name: Rename and Push Docker image
         run: | 
-          docker tag pizza:0.1 ${{ env.IMAGE_NAME }}:latest
+          docker tag pizza:latest ${{ env.IMAGE_NAME }}:latest
           docker push ${{ env.IMAGE_NAME }}:latest
-          docker tag pizza:0.1 ${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+          docker tag pizza:latest ${{ env.IMAGE_NAME }}:${{ env.VERSION }}
           docker push ${{ env.IMAGE_NAME }}:${{ env.VERSION }}
